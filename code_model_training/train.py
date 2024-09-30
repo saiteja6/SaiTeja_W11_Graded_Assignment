@@ -52,6 +52,7 @@ print("Accuracy: %s" % str(pipe.score(X_test, y_test)))
 # Plot confusion matrix
 print(ConfusionMatrixDisplay.from_estimator(pipe, X_test, y_test))
 plt.show()
+plt.savefig('confusion_matrix.png')
 
 # Export model
 joblib.dump(pipe, gzip.open('model/model_binary.dat.gz', "wb"))
